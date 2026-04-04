@@ -1,0 +1,2 @@
+# Gamification • [ESIT](https://github.com/jstpp/ESIT) plugin
+This repository contains a gamification plugin for [ESIT](https://github.com/jstpp/ESIT) online judge. **It is not finished yet.** Feel free to contribute.
