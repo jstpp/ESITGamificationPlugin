@@ -53,7 +53,7 @@
         $db_query->execute();
 
         ### Setup of badges' imgs public directory ###
-        copy_directory(__DIR__."/badges", __DIR__."/../img/badges");
+        copy_directory(__DIR__."/badges", __DIR__."/../../../public/img/plugins/gamification/badges");
 
         ### Installation finished ###
         return True;
@@ -69,6 +69,8 @@
             $db_query->execute();
             $db_query = $pdo->prepare('DELETE FROM PLUGINS WHERE plugin_name="gamification"');
             $db_query->execute();
+
+            delete_directory(__DIR__."/../../../public/img/plugins/gamification/badges");
         } catch (Exception $e) {
             print($e);
             return False;
