@@ -1,6 +1,6 @@
 <?php
     print("<h3>Odznaki</h3>");
-    $badges = array_slice(scandir("../badges"),2);
+    $badges = array_slice(scandir(__DIR__."../badges"),2);
 
     foreach($badges as $badge_path) {
 

@@ -53,7 +53,7 @@
         $db_query->execute();
 
         ### Setup of badges' imgs public directory ###
-        copy_directory("badges", "../img/badges");
+        copy_directory(__DIR__."/badges", __DIR__."../img/badges");
 
         ### Installation finished ###
         return True;
