@@ -49,7 +49,7 @@
         }
 
         ### Add plugin's status to proper table ###
-        $db_query = $pdo->prepare('INSERT INTO PLUGINS (plugin_name, value_category, value) VALUES ("gamification", "installed", "true")');
+        $db_query = $pdo->prepare('INSERT INTO PLUGINS (plugin_name, value_category, value) VALUES ("ESITGamificationPlugin", "installed", "true")');
         $db_query->execute();
 
         ### Setup of badges' imgs public directory ###
@@ -67,7 +67,9 @@
             $db_query->execute();
             $db_query = $pdo->prepare('DROP TABLE `PLUGIN_GAMIFICATION_BADGES`;');
             $db_query->execute();
-            $db_query = $pdo->prepare('DELETE FROM PLUGINS WHERE plugin_name="gamification"');
+            $db_query = $pdo->prepare('DELETE FROM PLUGINS WHERE plugin_name="ESITGamificationPlugin"');
+            $db_query->execute();
+            $db_query = $pdo->prepare('DELETE FROM MISC WHERE misc_name LIKE "community_plugin_ESITGamificationPlugin"');
             $db_query->execute();
 
             delete_directory(__DIR__."/../../../public/img/plugins/gamification/badges");
